@@ -1,0 +1,65 @@
+server:
+  port: 8888
+  address: localhost
+# log
+logging:
+    file: logs/platform-cloud.log
+    level:
+        root: info
+        com.dsjk.platform: debug
+
+druid:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/platform_cloud?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    #DataSource Global Setting
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    removeAbandoned: true
+    removeAbandonedTimeout: 1800
+    logAbandoned: true
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: false
+    # druid StatVie
+    statView:
+        allow: 127.0.0.1
+        deny:
+        loginUsername: admin
+        loginPassword: admin
+
+# MyBatis
+mybatis:
+    typeAliasesPackage: com.dsjk.platform.modules.**.bean
+    mapperLocations: classpath:mapper/*.xml
+
+mapper:
+    mappers:
+        - com.dsjk.platform.framework.mapper.CommonMapper
+    not-empty: false
+    identity: MYSQL
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+spring:
+    #mvc
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp

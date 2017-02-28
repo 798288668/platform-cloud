@@ -1,4 +1,4 @@
-package com.dsjk;
+package com.dsjk.platform;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
