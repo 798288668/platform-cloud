@@ -28,4 +28,8 @@ public class UserService {
         return userMapper.selectAll();
     }
 
+    public SysUser getById(Integer id) {
+        return userMapper.getById(id);
+    }
+
 }

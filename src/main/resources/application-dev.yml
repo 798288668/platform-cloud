@@ -9,9 +9,8 @@ logging:
         com.dsjk.platform: debug
 
 druid:
-    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/platform_cloud?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/platform_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: root
     #DataSource Global Setting
@@ -33,7 +32,7 @@ druid:
     filters: stat
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     useGlobalDataSourceStat: false
-    # druid StatVie
+    # druid StatView
     statView:
         allow: 127.0.0.1
         deny:
@@ -42,12 +41,11 @@ druid:
 
 # MyBatis
 mybatis:
-    typeAliasesPackage: com.dsjk.platform.modules.**.bean
-    mapperLocations: classpath:mapper/*.xml
+    mapperLocations: classpath:/mapper/**/*.xml
 
 mapper:
     mappers:
-        - com.dsjk.platform.framework.mapper.CommonMapper
+        - com.dsjk.platform.framework.common.CommonMapper
     not-empty: false
     identity: MYSQL
 

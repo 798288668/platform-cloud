@@ -4,6 +4,7 @@ import com.dsjk.platform.modules.sys.bean.SysUser;
 import com.dsjk.platform.modules.sys.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,11 @@ public class UserController {
     public PageInfo<SysUser> getAll(SysUser user) {
         List<SysUser> userList = userService.getUserList(user);
         return new PageInfo<>(userList);
+    }
+
+    @RequestMapping(value = "/{id}")
+    public SysUser view(@PathVariable Integer id) {
+        return userService.getById(id);
     }
 
 }

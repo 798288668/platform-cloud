@@ -1,4 +1,4 @@
-package com.dsjk.platform.framework.mapper;
+package com.dsjk.platform.framework.common;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
