@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>platform-cloud</artifactId>
+        <groupId>com.dsjk</groupId>
+        <version>1.0.0-releases</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-web</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.dsjk</groupId>
+            <artifactId>cloud-service-user</artifactId>
+            <version>1.0.0-releases</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
