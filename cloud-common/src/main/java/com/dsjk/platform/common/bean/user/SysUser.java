@@ -13,16 +13,16 @@ public class SysUser extends BaseEntity<SysUser> {
 
     private String companyId;
     private String officeId;
-    private String username;
-    private String realName;
-    private String mobile;
-    private String email;
-    private String photo;
+    private String loginName;
     private String password;
-    private Integer deviceId;
-    private String token;
+    private String no;
+    private String name;
+    private String email;
+    private String mobile;
+    private String photo;
     private String loginIp;
-    private Date loginTime;
+    private Date loginDate;
+    private String loginFlag;
 
     public String getCompanyId() {
         return companyId;
@@ -40,44 +40,12 @@ public class SysUser extends BaseEntity<SysUser> {
         this.officeId = officeId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {
@@ -88,20 +56,44 @@ public class SysUser extends BaseEntity<SysUser> {
         this.password = password;
     }
 
-    public Integer getDeviceId() {
-        return deviceId;
+    public String getNo() {
+        return no;
     }
 
-    public void setDeviceId(Integer deviceId) {
-        this.deviceId = deviceId;
+    public void setNo(String no) {
+        this.no = no;
     }
 
-    public String getToken() {
-        return token;
+    public String getName() {
+        return name;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getLoginIp() {
@@ -112,11 +104,19 @@ public class SysUser extends BaseEntity<SysUser> {
         this.loginIp = loginIp;
     }
 
-    public Date getLoginTime() {
-        return loginTime;
+    public Date getLoginDate() {
+        return loginDate;
     }
 
-    public void setLoginTime(Date loginTime) {
-        this.loginTime = loginTime;
+    public void setLoginDate(Date loginDate) {
+        this.loginDate = loginDate;
+    }
+
+    public String getLoginFlag() {
+        return loginFlag;
+    }
+
+    public void setLoginFlag(String loginFlag) {
+        this.loginFlag = loginFlag;
     }
 }

@@ -1,5 +1,6 @@
 package com.dsjk.platform.user.service;
 
+import com.dsjk.platform.common.BaseService;
 import com.dsjk.platform.common.bean.user.SysUser;
 import com.dsjk.platform.user.mapper.UserMapper;
 import com.github.pagehelper.PageHelper;
@@ -14,7 +15,7 @@ import java.util.List;
  * @version 2017/2/28
  */
 @Service
-public class UserService {
+public class UserService extends BaseService<SysUser> {
 
     private final UserMapper userMapper;
 
@@ -23,12 +24,13 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
+
     public List<SysUser> getUserList(SysUser user) {
         PageHelper.startPage(user.getPageNum(), user.getPageSize());
-        return userMapper.selectAll();
+        return userMapper.select(user);
     }
 
-    public SysUser getById(Integer id) {
+    public SysUser getById(String id) {
         return userMapper.getById(id);
     }
 

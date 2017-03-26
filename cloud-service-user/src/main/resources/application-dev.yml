@@ -1,3 +1,19 @@
+server:
+    port: 8000
+
+spring:
+    application:
+      name: service-user
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka
+   #eureka.instance.prefer-ip-address  表示将自己的IP注册到Eureka Server上，
+   #如果不配置,会将当前服务提供者所在的主机名注册到Eureka Server上。
+    instance:
+        prefer-ip-address: true
+
 
 # log
 logging:
@@ -7,7 +23,7 @@ logging:
         com.dsjk.platform: debug
 
 druid:
-    driver-class-name: platform.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/platform_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: root
@@ -43,7 +59,7 @@ mybatis:
 
 mapper:
     mappers:
-        - com.dsjk.platform.framework.common.CommonMapper
+        - com.dsjk.platform.common.CommonMapper
     not-empty: false
     identity: MYSQL
 

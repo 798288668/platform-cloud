@@ -15,7 +15,8 @@
 		<module>cloud-web</module>
 		<module>cloud-common</module>
 		<module>cloud-service-user</module>
-	</modules>
+        <module>cloud-eureka-server-HA01</module>
+    </modules>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -46,7 +47,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.4.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
     <dependencyManagement>
@@ -54,7 +55,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.RC1</version>
+                <version>Camden.SR6</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -62,12 +63,14 @@
     </dependencyManagement>
 	<properties>
 		<java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 
 	<dependencies>
 
-
 	</dependencies>
+
 
 
 </project>
