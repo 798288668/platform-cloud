@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/user")
 public class UserController {
 
+    private final UserClient userClient;
+
     @Autowired
-    private UserClient userClient;
+    public UserController(UserClient userClient) {
+        this.userClient = userClient;
+    }
 
 
     @GetMapping("/{id}")

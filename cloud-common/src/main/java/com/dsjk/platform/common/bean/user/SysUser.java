@@ -1,7 +1,7 @@
 package com.dsjk.platform.common.bean.user;
 
 
-import com.dsjk.platform.common.bean.BaseEntity;
+import com.dsjk.platform.common.base.DataEntity;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import java.util.Date;
  * @author fengcheng
  * @version 2017/2/28
  */
-public class SysUser extends BaseEntity<SysUser> {
+public class SysUser extends DataEntity<SysUser> {
 
     private String companyId;
     private String officeId;
