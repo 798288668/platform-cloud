@@ -24,14 +24,8 @@ public class UserService extends BaseService<SysUser> {
         this.userMapper = userMapper;
     }
 
-
-    public List<SysUser> getUserList(SysUser user) {
-        PageHelper.startPage(user.getPageNum(), user.getPageSize());
-        return userMapper.select(user);
-    }
-
-    public SysUser getById(String id) {
-        return userMapper.getById(id);
-    }
-
+//    @Override
+//    public SysUser get(String id) {
+//        return userMapper.getById(id);
+//    }
 }

@@ -13,6 +13,6 @@ eureka:
 
 # log
 logging:
-    file: ../logs/cloud-eureka-server-HA01.log
+    file: logs/cloud-eureka-server-HA01.log
     level:
         root: info

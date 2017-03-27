@@ -1,48 +1,43 @@
-package com.dsjk.platform.web.user;
+package com.dsjk.platform.user.resource;
 
 import com.dsjk.platform.common.bean.user.SysUser;
-import com.dsjk.platform.common.utils.BeanMapper;
+import com.dsjk.platform.user.service.UserService;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author fengcheng
- * @version 2017/2/28
+ * @version 2017/3/25
  */
 @RestController
 @RequestMapping("/sys/user")
-public class UserController {
+public class UserResource {
 
-    private final UserClient userClient;
+    private final UserService userService;
 
     @Autowired
-    public UserController(UserClient userClient) {
-        this.userClient = userClient;
+    public UserResource(UserService userService) {
+        this.userService = userService;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public SysUser get(@PathVariable String id) {
-        return userClient.get(id);
+        return userService.get(id);
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public PageInfo<SysUser> getPage(SysUser user) {
-        Map map = BeanMapper.map(user, Map.class);
-        return userClient.getPage(map);
+        return userService.getPage(user);
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public void save(SysUser user) {
-        userClient.save(user);
+        userService.save(user);
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable String id) {
-        userClient.delete(id);
+        userService.delete(id);
     }
 }

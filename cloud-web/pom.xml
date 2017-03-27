@@ -38,6 +38,11 @@
             <artifactId>cloud-common</artifactId>
             <version>1.0.0-releases</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.0</version>
+        </dependency>
     </dependencies>
 
 

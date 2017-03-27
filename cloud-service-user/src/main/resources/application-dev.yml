@@ -17,7 +17,7 @@ eureka:
 
 # log
 logging:
-    file: ../logs/cloud-service-user.log
+    file: logs/cloud-service-user.log
     level:
         root: info
         com.dsjk.platform: debug

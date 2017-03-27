@@ -1,6 +1,6 @@
 # log
 logging:
-  file: ../logs/cloud-web.log
+  file: logs/cloud-web.log
   level:
     root: info
     com.dsjk.platform: debug
