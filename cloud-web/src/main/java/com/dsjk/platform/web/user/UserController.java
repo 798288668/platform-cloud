@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +32,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
+    public SysUser get(SysUser user) {
+        Map map = BeanMapper.map(user, Map.class);
+        return userClient.get(map);
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<SysUser> getList(SysUser user) {
+        Map map = BeanMapper.map(user, Map.class);
+        return userClient.getList(map);
+    }
+
+    @RequestMapping(value = "/page", method = RequestMethod.GET)
     public PageInfo<SysUser> getPage(SysUser user) {
         Map map = BeanMapper.map(user, Map.class);
         return userClient.getPage(map);
@@ -41,8 +54,8 @@ public class UserController {
         userClient.save(user);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable String id) {
-        userClient.delete(id);
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public void delete(SysUser user) {
+        userClient.delete(user);
     }
 }

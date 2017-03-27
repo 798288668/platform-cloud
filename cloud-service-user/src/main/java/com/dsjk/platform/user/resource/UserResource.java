@@ -6,12 +6,13 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author fengcheng
  * @version 2017/3/25
  */
 @RestController
-@RequestMapping("/sys/user")
 public class UserResource {
 
     private final UserService userService;
@@ -21,23 +22,33 @@ public class UserResource {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/sys/user/{id}", method = RequestMethod.GET)
     public SysUser get(@PathVariable String id) {
         return userService.get(id);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/sys/user", method = RequestMethod.GET)
+    public SysUser get(SysUser user) {
+        return userService.get(user);
+    }
+
+    @RequestMapping(value = "/sys/user/list", method = RequestMethod.GET)
+    public List<SysUser> getList(SysUser user) {
+        return userService.getList(user);
+    }
+
+    @RequestMapping(value = "/sys/user/page", method = RequestMethod.GET)
     public PageInfo<SysUser> getPage(SysUser user) {
         return userService.getPage(user);
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public void save(SysUser user) {
+    @RequestMapping(value = "/sys/user/save", method = RequestMethod.POST)
+    public void save(@RequestBody SysUser user) {
         userService.save(user);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable String id) {
-        userService.delete(id);
+    @RequestMapping(value = "/sys/user/delete", method = RequestMethod.POST)
+    public void delete(@RequestBody SysUser user) {
+        userService.delete(user);
     }
 }

@@ -1,6 +1,8 @@
 package com.dsjk.platform.common;
 
 import com.dsjk.platform.common.base.DataEntity;
+import com.dsjk.platform.common.bean.user.SysUser;
+import com.dsjk.platform.common.utils.IdWorker;
 import com.dsjk.platform.common.utils.StringUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -40,13 +42,14 @@ public abstract class BaseService<T extends DataEntity<T>> {
 
     public int save(T entity) {
         if (StringUtils.isEmpty(entity.getId())) {
+            entity.setId(IdWorker.getId() + "");
             return mapper.insertSelective(entity);
         } else {
             return mapper.updateByPrimaryKeySelective(entity);
         }
     }
 
-    public int delete(String id) {
-        return mapper.deleteByPrimaryKey(id);
+    public int delete(T entity) {
+        return mapper.delete(entity);
     }
 }
