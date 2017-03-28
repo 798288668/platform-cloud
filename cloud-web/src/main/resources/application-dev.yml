@@ -28,3 +28,5 @@ info:
   java:
     source: @java.version@
     target: @java.version@
+
+

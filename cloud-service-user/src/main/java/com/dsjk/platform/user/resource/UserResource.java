@@ -43,12 +43,14 @@ public class UserResource {
     }
 
     @RequestMapping(value = "/sys/user/save", method = RequestMethod.POST)
-    public void save(@RequestBody SysUser user) {
+    public String save(@RequestBody SysUser user) {
         userService.save(user);
+        return "";
     }
 
     @RequestMapping(value = "/sys/user/delete", method = RequestMethod.POST)
-    public void delete(@RequestBody SysUser user) {
+    public String delete(@RequestBody SysUser user) {
         userService.delete(user);
+        return "";
     }
 }

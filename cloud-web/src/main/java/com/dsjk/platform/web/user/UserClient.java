@@ -13,7 +13,7 @@ import java.util.Map;
  * @author fengcheng
  * @version 2017/3/26
  */
-@FeignClient(name = "service-user")
+@FeignClient(name = "service-user", fallback = UserClientFallback.class)
 public interface UserClient {
 
     @RequestMapping(value = "/sys/user/{id}", method = RequestMethod.GET)
@@ -29,9 +29,9 @@ public interface UserClient {
     PageInfo<SysUser> getPage(@RequestParam Map map);
 
     @RequestMapping(value = "/sys/user/save", method = RequestMethod.POST)
-    void save(@RequestBody SysUser user);
+    String save(@RequestBody SysUser user);
 
     @RequestMapping(value = "/sys/user/delete", method = RequestMethod.POST)
-    void delete(@RequestBody SysUser user);
+    String delete(@RequestBody SysUser user);
 }
 
