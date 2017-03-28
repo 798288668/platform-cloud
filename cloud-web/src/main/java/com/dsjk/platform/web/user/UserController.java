@@ -3,11 +3,9 @@ package com.dsjk.platform.web.user;
 import com.dsjk.platform.common.bean.user.SysUser;
 import com.dsjk.platform.common.utils.BeanMapper;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +22,11 @@ public class UserController {
     @Autowired
     public UserController(UserClient userClient) {
         this.userClient = userClient;
+    }
+
+    @RequestMapping(value = "/sql/{id}", method = RequestMethod.GET)
+    public SysUser getBySql(@PathVariable String id) {
+        return userClient.getBySql(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

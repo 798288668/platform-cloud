@@ -1,7 +1,6 @@
 package com.dsjk.platform.common;
 
 import com.dsjk.platform.common.base.DataEntity;
-import com.dsjk.platform.common.bean.user.SysUser;
 import com.dsjk.platform.common.utils.IdWorker;
 import com.dsjk.platform.common.utils.StringUtils;
 import com.github.pagehelper.PageHelper;

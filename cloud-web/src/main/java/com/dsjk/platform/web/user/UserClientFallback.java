@@ -3,6 +3,7 @@ package com.dsjk.platform.web.user;
 import com.dsjk.platform.common.bean.user.SysUser;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,6 +16,11 @@ import java.util.Map;
  */
 @Component
 public class UserClientFallback implements UserClient {
+    @Override
+    public SysUser getBySql(@PathVariable String id) {
+        return null;
+    }
+
     @Override
     public SysUser get(@RequestParam(value = "id") String id) {
         return null;

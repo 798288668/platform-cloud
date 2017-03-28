@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserMapper extends CommonMapper<SysUser> {
-    SysUser getById(String id);
 
+    SysUser getUserBySql(String id);
 }

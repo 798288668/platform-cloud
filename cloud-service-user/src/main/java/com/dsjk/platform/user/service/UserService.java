@@ -24,8 +24,7 @@ public class UserService extends BaseService<SysUser> {
         this.userMapper = userMapper;
     }
 
-//    @Override
-//    public SysUser get(String id) {
-//        return userMapper.getById(id);
-//    }
+    public SysUser getUserBySql(String id) {
+        return userMapper.getUserBySql(id);
+    }
 }
