@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 1111
 
 eureka:
     client:
@@ -9,7 +9,7 @@ eureka:
         fetchRegistry: false
         #Eureka Server的访问地址，服务注册和client获取服务注册信息均通过该URL，多个服务注册地址用,隔开
         serviceUrl:
-          defaultZone: http://localhost:8761/eureka/
+          defaultZone: http://localhost:1111/eureka/
 
 # log
 logging:
