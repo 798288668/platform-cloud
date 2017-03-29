@@ -7,13 +7,13 @@ logging:
 
 server:
   port: 8010
-  address: localhost
+
 spring:
   application:
     name: cloud-web
+
 eureka:
   client:
-    registerWithEureka: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:

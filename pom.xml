@@ -16,6 +16,7 @@
 		<module>cloud-common</module>
 		<module>cloud-service-user</module>
         <module>cloud-eureka-server-HA01</module>
+        <module>cloud-zuul</module>
     </modules>
 
 	<distributionManagement>
