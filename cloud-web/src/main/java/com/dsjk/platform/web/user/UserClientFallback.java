@@ -27,8 +27,8 @@ public class UserClientFallback implements UserClient {
     }
 
     @Override
-    public SysUser get(@RequestParam Map map) {
-        return null;
+    public SysUser get(@RequestParam Map map){
+        throw null;
     }
 
     @Override

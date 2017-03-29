@@ -1,6 +1,7 @@
 package com.dsjk.platform.web.user;
 
 import com.dsjk.platform.common.bean.user.SysUser;
+import com.dsjk.platform.common.exception.NotFoundException;
 import com.dsjk.platform.common.utils.BeanMapper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,13 @@ public class UserController {
 
     @RequestMapping(value = "/sql/{id}", method = RequestMethod.GET)
     public SysUser getBySql(@PathVariable String id) {
-        return userClient.getBySql(id);
+        SysUser user = null;
+        try{
+             user = userClient.getBySql(id);
+        } catch(NotFoundException ex) {
+            // TODO: 2017/3/29
+        }
+        return user;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
