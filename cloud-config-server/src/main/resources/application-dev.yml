@@ -1,0 +1,24 @@
+# log
+logging:
+  file: logs/cloud-config-server.log
+  level:
+    root: info
+    com.dsjk.platform: debug
+
+server:
+  port: 6666
+
+spring:
+  application:
+    name: config-server
+
+# git管理配置
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.oschina.net/didispace/SpringBoot-Learning/
+          searchPaths: Chapter9-1-4/config-repo
+          username: username
+          password: password

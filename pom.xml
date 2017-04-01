@@ -18,6 +18,7 @@
         <module>cloud-eureka-server-HA01</module>
         <module>cloud-zuul</module>
         <module>cloud-service-cms</module>
+        <module>cloud-config-server</module>
     </modules>
 
 	<distributionManagement>

@@ -1,0 +1,26 @@
+# log
+logging:
+  file: logs/cloud-zuul.log
+  level:
+    root: info
+    com.dsjk.platform: debug
+
+server:
+  port: 4444
+
+spring:
+  application:
+    name: api-gateway
+
+# routes to url
+zuul:
+  routes:
+    api-web:
+      path: /api-web/**
+      serviceId: cloud-web
+
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
