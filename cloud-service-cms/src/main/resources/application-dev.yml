@@ -1,16 +1,16 @@
 # log
 logging:
-    file: logs/cloud-service-user.log
+    file: logs/cloud-service-cms.log
     level:
         root: info
         com.dsjk.platform: debug
 
 server:
-    port: 2222
+    port: 5555
 
 spring:
     application:
-      name: service-user
+      name: service-cms
 
 eureka:
     client:

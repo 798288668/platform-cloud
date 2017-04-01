@@ -1,6 +1,5 @@
-package com.dsjk.platform.common;
+package com.dsjk.platform.common.base;
 
-import com.dsjk.platform.common.base.DataEntity;
 import com.dsjk.platform.common.utils.IdWorker;
 import com.dsjk.platform.common.utils.StringUtils;
 import com.github.pagehelper.PageHelper;
@@ -18,6 +17,7 @@ import java.util.List;
 @Service
 public abstract class BaseService<T extends DataEntity<T>> {
 
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     protected Mapper<T> mapper;
 

@@ -1,6 +1,6 @@
 package com.dsjk.platform.user.mapper;
 
-import com.dsjk.platform.common.CommonMapper;
+import com.dsjk.platform.common.base.CommonMapper;
 import com.dsjk.platform.common.bean.user.SysUser;
 import org.springframework.stereotype.Repository;
 
