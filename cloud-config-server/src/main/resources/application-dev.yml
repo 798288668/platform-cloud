@@ -18,7 +18,7 @@ spring:
     config:
       server:
         git:
-          uri: http://git.oschina.net/didispace/SpringBoot-Learning/
-          searchPaths: Chapter9-1-4/config-repo
+          uri: https://github.com/lufengc/platform-cloud
+          searchPaths: config-repo
           username: username
           password: password
