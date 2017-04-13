@@ -1,9 +1,9 @@
-# log
+#login
 logging:
   file: logs/cloud-config-server.log
   level:
     root: info
-    com.dsjk.platform: debug
+    com.dsjk.config: debug
 
 server:
   port: 6666
@@ -13,12 +13,12 @@ spring:
     name: config-server
 
 # git管理配置
-spring:
   cloud:
     config:
       server:
         git:
           uri: https://github.com/lufengc/platform-cloud
           searchPaths: config-repo
-          username: username
-          password: password
+          username: lufengc@163.com
+          password: fengcheng1991
+
