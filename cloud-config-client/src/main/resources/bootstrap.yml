@@ -9,7 +9,7 @@ spring:
   application:
     name: config-client
 
-#config
+  #config
   cloud:
     config:
       profile: dev
