@@ -1,0 +1,30 @@
+#login
+logging:
+  file: logs/cloud-config-client.log
+  level:
+    root: info
+    com.dsjk.config: debug
+
+spring:
+  application:
+    name: config-client
+
+#config
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: config-server
+
+server:
+  port: 7777
+
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+      prefer-ip-address: true

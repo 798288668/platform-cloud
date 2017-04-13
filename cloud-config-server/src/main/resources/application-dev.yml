@@ -8,6 +8,13 @@ logging:
 server:
   port: 6666
 
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:1111/eureka
+    instance:
+        prefer-ip-address: true
+
 spring:
   application:
     name: config-server
@@ -21,4 +28,5 @@ spring:
           searchPaths: config-repo
           username: lufengc@163.com
           password: fengcheng1991
+
 
