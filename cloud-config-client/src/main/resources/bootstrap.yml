@@ -5,6 +5,9 @@ logging:
     root: info
     com.dsjk.config: debug
 
+server:
+  port: 7777
+
 spring:
   application:
     name: config-client
@@ -12,18 +15,26 @@ spring:
   #config
   cloud:
     config:
+      failFast: true
       profile: dev
       label: master
       discovery:
         enabled: true
         serviceId: config-server
 
-server:
-  port: 7777
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
+    bus:
+      trace:
+        enabled: true
+
 
 eureka:
   client:
-    registerWithEureka: false
+    registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
   instance:

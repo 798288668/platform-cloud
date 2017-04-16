@@ -8,18 +8,11 @@ logging:
 server:
   port: 6666
 
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:1111/eureka
-    instance:
-        prefer-ip-address: true
-
 spring:
   application:
     name: config-server
 
-# git管理配置
+  # git管理配置
   cloud:
     config:
       server:
@@ -29,4 +22,15 @@ spring:
           username: lufengc@163.com
           password: fengcheng1991
 
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka
+  instance:
+    prefer-ip-address: true
