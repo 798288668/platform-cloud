@@ -1,6 +1,6 @@
 package com.dsjk.platform.user.mapper;
 
-import com.dsjk.platform.common.base.CommonMapper;
+import com.dsjk.platform.common.base.BaseMapper;
 import com.dsjk.platform.common.bean.user.SysUser;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @version 2017/2/28
  */
 @Repository
-public interface UserMapper extends CommonMapper<SysUser> {
+public interface UserMapper extends BaseMapper<SysUser> {
 
     SysUser getUserBySql(String id);
 }
