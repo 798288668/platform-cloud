@@ -1,8 +1,8 @@
 # platform-cloud
 
-### 基于Spring Cloud的分布式系统示例
+### 基于Spring Cloud的微服务实践
 
-
+##### 框架选型
 * Eureka：使用Spring Cloud Netflix中的Eureka实现高可用HA的服务注册中心以及服务注册与发现；
 
 * Spring Cloud Feign：服务间通过Feign实现服务的消费以及基于Ribbon的负载均衡；
@@ -13,8 +13,9 @@
 
 * Spring Cloud Zuul：通过Zuul为接入层服务提供API网关服务，帮助实现接口的动态路由、认证鉴权、静态应答处理等。
     
-* Spring Cloud Bus：通过Bus+kafka实现对配置信息的实时更新。
-可以向其中任何一个实例发送POST请求（/bus/refresh）实现所有实例配置信息的动态更新。
+* Spring Cloud Bus：通过Bus+kafka实现对配置信息的实时更新。可以向其中任何一个实例发送POST请求（/bus/refresh）实现所有实例配置信息的动态更新。
+
+* Spring Cloud Security：未完成
 
 * Swagger UI：使用Swagger UI实现自文档的微服务，写好接口即有文档，即可调试。
 
