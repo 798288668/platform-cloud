@@ -57,7 +57,7 @@ mybatis:
 
 mapper:
     mappers:
-        - com.dsjk.platform.common.base.CommonMapper
+        - com.dsjk.platform.common.base.BaseMapper
     not-empty: false
     identity: MYSQL
 

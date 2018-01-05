@@ -18,6 +18,8 @@ import java.util.Map;
 public class UserClientFallback implements UserClient {
     @Override
     public SysUser getBySql(@PathVariable String id) {
+        System.out.println("调用服务失败");
+        //return new ResponseResult("-1", "调用服务失败");
         return null;
     }
 

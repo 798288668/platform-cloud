@@ -26,48 +26,41 @@ public class UserResource implements IUserClient {
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/sql/{id}", method = RequestMethod.GET)
-    public SysUser getBySql(@PathVariable String id) {
+    public SysUser getBySql(String id) {
         return userService.getUserBySql(id);
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/{id}", method = RequestMethod.GET)
-    public SysUser get(@PathVariable String id) {
+    public SysUser get(String id) {
         return userService.get(id);
     }
 
     @Override
-    @RequestMapping(value = "/sys/user", method = RequestMethod.GET)
-    public SysUser get(@RequestParam Map map) {
+    public SysUser get(Map map) {
         SysUser user = BeanMapper.map(map, SysUser.class);
         return userService.get(user);
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/list", method = RequestMethod.GET)
-    public List<SysUser> getList(@RequestParam Map map) {
+    public List<SysUser> getList(Map map) {
         SysUser user = BeanMapper.map(map, SysUser.class);
         return userService.getList(user);
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/page", method = RequestMethod.GET)
-    public PageInfo<SysUser> getPage(@RequestParam Map map) {
+    public PageInfo<SysUser> getPage(Map map) {
         SysUser user = BeanMapper.map(map, SysUser.class);
         return userService.getPage(user);
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/save", method = RequestMethod.POST)
-    public String save(@RequestBody SysUser user) {
+    public String save(SysUser user) {
         userService.save(user);
         return "";
     }
 
     @Override
-    @RequestMapping(value = "/sys/user/delete", method = RequestMethod.POST)
-    public String delete(@RequestBody SysUser user) {
+    public String delete(SysUser user) {
         userService.delete(user);
         return "";
     }

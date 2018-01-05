@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/sql/{id}", method = RequestMethod.GET)
-    public SysUser getBySql(@PathVariable String id) {
+    public SysUser getBySql(@PathVariable String id) throws InterruptedException {
         SysUser user = null;
         try{
              user = userClient.getBySql(id);

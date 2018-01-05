@@ -28,14 +28,12 @@ public class ArticleResource implements IArticleClient {
     }
 
     @Override
-    @RequestMapping(value = "/cms/article/{id}", method = RequestMethod.GET)
-    public CmsArticle get(@RequestParam(value = "id") String id) {
+    public CmsArticle get(String id) {
         return articleService.get(id);
     }
 
     @Override
-    @RequestMapping(value = "/cms/article/page", method = RequestMethod.GET)
-    public PageInfo<CmsArticle> getPage(@RequestParam Map map) {
+    public PageInfo<CmsArticle> getPage(Map map) {
         CmsArticle article = BeanMapper.map(map, CmsArticle.class);
         return articleService.getPage(article);
     }
