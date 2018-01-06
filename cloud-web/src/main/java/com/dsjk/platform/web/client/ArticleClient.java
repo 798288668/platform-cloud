@@ -1,4 +1,4 @@
-package com.dsjk.platform.web.cms;
+package com.dsjk.platform.web.client;
 
 
 import com.dsjk.platform.common.service.user.IArticleClient;

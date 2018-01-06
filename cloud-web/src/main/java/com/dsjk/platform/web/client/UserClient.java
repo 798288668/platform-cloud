@@ -1,4 +1,4 @@
-package com.dsjk.platform.web.user;
+package com.dsjk.platform.web.client;
 
 
 import com.dsjk.platform.common.service.user.IUserClient;

@@ -1,11 +1,14 @@
-package com.dsjk.platform.web.user;
+package com.dsjk.platform.web.controller;
 
 import com.dsjk.platform.common.bean.user.SysUser;
-import com.dsjk.platform.common.exception.NotFoundException;
 import com.dsjk.platform.common.utils.BeanMapper;
+import com.dsjk.platform.web.client.UserClient;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
@@ -26,14 +29,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/sql/{id}", method = RequestMethod.GET)
-    public SysUser getBySql(@PathVariable String id) throws InterruptedException {
-        SysUser user = null;
-        try{
-             user = userClient.getBySql(id);
-        } catch(NotFoundException ex) {
-            // TODO: 2017/3/29
-        }
-        return user;
+    public SysUser getBySql(@PathVariable String id) {
+        return userClient.getBySql(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

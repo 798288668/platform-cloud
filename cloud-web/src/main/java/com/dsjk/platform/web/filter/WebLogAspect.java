@@ -22,14 +22,14 @@ import java.util.Arrays;
 public class WebLogAspect {
     private org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    ThreadLocal<Long> startTime = new ThreadLocal<>();
+    private ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-    @Pointcut("execution(public * com.dsjk.platform.web..*.*(..))")
+    @Pointcut("execution(public * com.dsjk.platform.web.controller..*.*(..))")
     public void webLog() {
     }
 
     @Before("webLog()")
-    public void doBefore(JoinPoint joinPoint) throws Throwable {
+    public void doBefore(JoinPoint joinPoint) {
         startTime.set(System.currentTimeMillis());
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -42,7 +42,7 @@ public class WebLogAspect {
     }
 
     @AfterReturning(returning = "ret", pointcut = "webLog()")
-    public void doAfterReturning(Object ret) throws Throwable {
+    public void doAfterReturning(Object ret) {
         logger.info("RESPONSE : " + ret);
         logger.info("SPEND TIME : " + (System.currentTimeMillis() - startTime.get()));
     }

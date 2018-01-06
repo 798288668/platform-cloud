@@ -1,10 +1,8 @@
-package com.dsjk.platform.web.cms;
+package com.dsjk.platform.web.controller;
 
 import com.dsjk.platform.common.bean.cms.CmsArticle;
-import com.dsjk.platform.common.bean.user.SysUser;
-import com.dsjk.platform.common.exception.NotFoundException;
 import com.dsjk.platform.common.utils.BeanMapper;
-import com.dsjk.platform.web.user.UserClient;
+import com.dsjk.platform.web.client.ArticleClient;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
 
 /**
