@@ -12,13 +12,12 @@ spring:
     name: cloud-web
   aop:
     proxy-target-class: true
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
-  instance:
-    prefer-ip-address: true
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: false
 
 feign:
   hystrix:

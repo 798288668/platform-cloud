@@ -1,26 +1,20 @@
 # log
 logging:
-    file: logs/cloud-service-user.log
-    level:
-        root: info
-        com.dsjk.platform: debug
+  file: logs/cloud-service-user.log
+  level:
+    root: info
+    com.dsjk.platform: debug
 
 server:
-    port: 2222
+  port: 2222
 
 spring:
-    application:
-      name: service-user
-
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:1111/eureka
-   #eureka.instance.prefer-ip-address  表示将自己的IP注册到Eureka Server上，
-   #如果不配置,会将当前服务提供者所在的主机名注册到Eureka Server上。
-    instance:
-        prefer-ip-address: true
-
+  application:
+    name: service-user
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
 
 druid:
     driver-class-name: com.mysql.jdbc.Driver
