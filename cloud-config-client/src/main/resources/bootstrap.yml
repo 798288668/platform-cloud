@@ -3,7 +3,7 @@ logging:
   file: logs/cloud-config-client.log
   level:
     root: info
-    com.dsjk.config: debug
+    com.cheng.config: debug
 
 server:
   port: 7777

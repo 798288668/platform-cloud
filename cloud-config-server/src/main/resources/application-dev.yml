@@ -3,7 +3,7 @@ logging:
   file: logs/cloud-config-server.log
   level:
     root: info
-    com.dsjk.config: debug
+    com.cheng.config: debug
 
 server:
   port: 6666

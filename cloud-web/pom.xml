@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>platform-cloud</artifactId>
-        <groupId>com.dsjk</groupId>
+        <groupId>com.cheng</groupId>
         <version>1.0.0-releases</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -48,7 +48,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.feign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+            <version>8.18.0</version>
+        </dependency>
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -62,7 +70,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.dsjk</groupId>
+            <groupId>com.cheng</groupId>
             <artifactId>cloud-common</artifactId>
             <version>1.0.0-releases</version>
             <exclusions>

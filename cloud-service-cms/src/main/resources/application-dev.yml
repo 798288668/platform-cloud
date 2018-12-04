@@ -3,7 +3,7 @@ logging:
     file: logs/cloud-service-cms.log
     level:
         root: info
-        com.dsjk.platform: debug
+        com.cheng.platform: debug
 
 server:
     port: 5555
@@ -57,7 +57,7 @@ mybatis:
 
 mapper:
     mappers:
-        - com.dsjk.platform.common.base.BaseMapper
+      - com.cheng.platform.common.base.BaseMapper
     not-empty: false
     identity: MYSQL
 

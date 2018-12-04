@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>platform-cloud</artifactId>
-        <groupId>com.dsjk</groupId>
+        <groupId>com.cheng</groupId>
         <version>1.0.0-releases</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <artifactId>cloud-service-user</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.dsjk</groupId>
+            <groupId>com.cheng</groupId>
             <artifactId>cloud-common</artifactId>
             <version>1.0.0-releases</version>
         </dependency>
@@ -46,11 +46,35 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
-
-
-
-
     </dependencies>
 
+    <properties>
+        <docker.image.prefix>springio</docker.image.prefix>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.3.6</version>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

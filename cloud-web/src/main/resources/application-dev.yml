@@ -2,7 +2,7 @@ logging:
   file: logs/cloud-web.log
   level:
     root: info
-    com.dsjk.platform: debug
+    com.cheng.platform: debug
 
 server:
   port: 3333
@@ -20,5 +20,5 @@ spring:
         register: false
 
 feign:
-  hystrix:
+  httpclient:
     enabled: true

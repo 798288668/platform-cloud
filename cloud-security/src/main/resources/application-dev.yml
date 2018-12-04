@@ -3,7 +3,7 @@ logging:
   file: logs/cloud-security.log
   level:
     root: info
-    com.dsjk.security: debug
+    com.cheng.security: debug
 
 server:
   port: 6666

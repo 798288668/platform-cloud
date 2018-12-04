@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dsjk.platform.user.mapper.UserMapper">
+<mapper namespace="com.cheng.platform.user.mapper.UserMapper">
 
-    <select id="getUserBySql" resultType="com.dsjk.platform.common.bean.user.SysUser">
+    <select id="getUserBySql" resultType="com.cheng.platform.common.bean.user.SysUser">
         SELECT
         id
         FROM sys_user a

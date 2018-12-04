@@ -3,7 +3,7 @@ logging:
   file: logs/cloud-zuul.log
   level:
     root: info
-    com.dsjk.platform: debug
+    com.cheng.platform: debug
 
 server:
   port: 4444
